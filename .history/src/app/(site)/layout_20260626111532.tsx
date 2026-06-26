@@ -1,0 +1,16 @@
+import Header from "@/components/header/page";
+
+export default function SiteLayout({
+	children,
+}: Readonly<{
+	children: React.ReactNode;
+}>) {
+	return (
+		<main>
+			<Header />
+			<div className=" w-[95%] m-auto bg-blue-100">
+				{children}
+			</div>
+		</main >
+	);
+}
