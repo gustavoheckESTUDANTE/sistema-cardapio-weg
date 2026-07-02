@@ -17,7 +17,7 @@ export default async function MenuTag({text, variant="fixed"}: TagProps) {
             variantStyle = "bg-gray-200 font-medium text-black"
             break;
         case "quantity":
-            variantStyle = "bg-blue-800 font-bold"
+            variantStyle = "bg-blue-800 font-bold border border-2"
             break;
         default:
             console.error("A variante do menu é inválida")

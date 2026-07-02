@@ -1,8 +1,8 @@
-import getItems from "@/services/menu/getItems";
 import { Product } from "@/types/product";
 import MenuTag from "../../atoms/tag/page";
 import Item from "../../molecules/item/page";
 import getFixedItems from "@/services/menu/getFixedItems";
+import getNotFixedItems from "@/services/menu/getNotFixedItems";
 
 interface MenuProps {
     diaSemana: "Segunda-Feira" | "Terça-Feira" | "Quarta-Feira" | "Quinta-Feira" | "Sexta-Feira"
@@ -10,7 +10,7 @@ interface MenuProps {
 
 export default async function Menu({ diaSemana }: MenuProps) {
     const fixedProductList: Array<Product> = await getFixedItems();
-    const productList: Array<Product> = await getItems();
+    const productList: Array<Product> = await getNotFixedItems();
 
     let egg : Product;
     let rice : Product;
@@ -31,7 +31,7 @@ export default async function Menu({ diaSemana }: MenuProps) {
     })
 
     return <>
-        <div className="w-full h-full flex flex-col gap-4 border-2 border-blue-700 bg-blue-300 rounded-2xl p-4 text-white font-bold">
+        <div className="w-full h-full flex flex-col gap-4 border-2 border-blue-700 bg-blue-300 rounded-2xl p-4 text-white font-bold 2xl:h-370">
             <div className="flex justify-between">
                 <p>{diaSemana}</p>
                 <MenuTag text="10 Itens" variant="quantity"></MenuTag>
