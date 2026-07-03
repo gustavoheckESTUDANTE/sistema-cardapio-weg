@@ -7,5 +7,5 @@ export interface ProductPost {
     destacado: boolean,
     fixo: boolean,
     porcoes: number,
-    valor_energetico: number
+    valorEnergetico: number
 }   

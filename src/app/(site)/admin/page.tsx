@@ -11,7 +11,7 @@ export default async function Admin() {
         <div className="flex items-center justify-center flex-col gap-4">
             <div className="flex justify-between items-center w-full">
                 <h1 className="font-bold text-2xl text-blue-700">Painel de Administrador</h1>
-                <PopUp text="Add +"></PopUp>
+                <PopUp text="Add +" type={"post"}></PopUp>
             </div>
             <div className="grid grid-cols-6 gap-4">
                 {products.map((product: Product) => (

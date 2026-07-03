@@ -1,4 +1,6 @@
 import MenuTag from "@/components/atoms/tag/page"
+import PopUp from "@/components/organisms/pop-up/page";
+import deleteProduct from "@/services/admin/deleteProduct";
 import { Product } from "@/types/product"
 import Image from "next/image";
 
@@ -27,8 +29,8 @@ export default function AdminItem({ product }: AdminItemProps) {
                     </div>
                 </div>
                 <div className="flex gap-2.5">
-                    <button className="p-4 bg-green-300 text-green-900 font-bold rounded-2xl"> Editar </button>
-                    <button className="p-4 bg-red-600 text-white font-bold rounded-2xl"> Excluir </button>
+                    <PopUp text="Editar" type="put" productId={product.id}></PopUp>
+                    <button className="p-4 bg-red-600 text-white font-bold rounded-2xl" onClick={() => deleteProduct(product.id)}> Excluir </button>
                 </div>
             </div>
         </div>
